@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 
-@FeignClient(name="order", url="localhost:9091")
+@FeignClient(name="order", url="${ORDER_SERVICE_HOST:http://localhost}:9091")
 public interface orderserviceproxy {
 	@GetMapping(path="/order/{id}")
 	public List<aggregator> Getorderbyuserid(@PathVariable int id );
