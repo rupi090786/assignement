@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 
-@FeignClient(name="user-service", url="localhost:9090")
+@FeignClient(name="user-service", url="{USER_SERVICE_URI:http://localhost}:9090")
 public interface userproxyservice {
 	@GetMapping(path="/user/{id}") //to find one user
 	public aggregateorder retrieveUser(@PathVariable int id); 
